@@ -18,4 +18,20 @@ class Character
         $this->attack = $attack;
         $this->defense = $defense;
     }
+
+    public function getCharacterData($data)
+    {
+        if (property_exists($this, $data)) {
+            return $this->$data;
+        } else {
+            return null;
+        }
+    }
+
+    public function updateCharacterData($data, $newValue)
+    {
+        if (property_exists($this, $data)) {
+            $this->$data = $newValue;
+        }
+    }
 }
