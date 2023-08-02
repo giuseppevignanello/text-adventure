@@ -28,10 +28,18 @@ class Character
         }
     }
 
-    public function updateCharacterData($data, $newValue)
+    public function setLifePoints($newValue)
     {
-        if (property_exists($this, $data)) {
-            $this->$data = $newValue;
-        }
+        $this->lifePoints = $newValue;
+    }
+
+    public function setAttack($newValue)
+    {
+        $this->attack = $newValue;
+    }
+
+    public function setDefense($newValue)
+    {
+        $this->defense = $newValue;
     }
 }
