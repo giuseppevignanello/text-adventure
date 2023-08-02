@@ -28,6 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body class="bg-success text-white">
     <div class="container mt-4">
         <form method="post" action="firstFight.php">
+            <h5>Hi <?php echo $hero_name ?></h5>
+            <h6>These are your points:</h6>
+            <p> Life Points: <?php echo $hero->getCharacterData("lifePoints") ?> <br>
+                Attack: <?php echo $hero->getCharacterData("attack") ?> <br>
+                Defense: <?php echo $hero->getCharacterData("defense") ?>
+            </p>
             <h4>Enjoy your first fight</h4>
             <button class="btn btn-primary" type="submit">Fight</button>
         </form>
