@@ -22,4 +22,11 @@ class Playable extends Character
             $this->inventory[] = $item;
         }
     }
+
+    //getting the inventary 
+
+    public function getInventory()
+    {
+        return $this->inventory;
+    }
 }

@@ -10,7 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // create hero character
     require_once "Playable.php";
     $hero = new  Playable($hero_name, 100, 20, 10);
-    $hero->addToInventory("A dead cellphon", "An Empty Wallet", "A set of Keys");
+    $hero->addToInventory("A dead cellphone", "An Empty Wallet", "A set of Keys");
+    $hero_inventory = $hero->getInventory();
     // save the hero in the session
     $_SESSION["hero"] = $hero;
 
@@ -77,17 +78,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </button>
 
     <!-- Modal -->
-    <div class="modal fade " id="checkYourkPocketsModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="checkYourkPocketsModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
+            <div class="modal-content bg-black">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalTitleId">The contents of your pockets</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close hacking_green_bg" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
                         <ul>
-
+                            <?php
+                            foreach ($hero_inventory as $item) {
+                                echo "<li> {$item} </li>";
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
