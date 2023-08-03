@@ -1,5 +1,5 @@
 <?php
-require_once "Location.php";
+require_once "../Classes/Location.php";
 
 session_start();
 
@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $hero_name = $_POST["hero_name"];
 
     // create hero character
-    require_once "Playable.php";
+    require_once "../Classes/Playable.php";
     $hero = new  Playable($hero_name, 100, 20, 10);
     $hero->addToInventory("A dead cellphone", "An Empty Wallet", "A set of Keys");
     $hero_inventory = $hero->getInventory();
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 
-<?php include_once 'partials/header.php' ?>
+<?php include_once '../partials/header.php' ?>
 <div class="container mt-4">
     <h5>Hi <?php echo $hero_name ?></h5>
 
@@ -76,7 +76,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <button type="button" class="my-2 hacking_green_bg border-0" data-bs-toggle="modal" data-bs-target="#checkYourkPocketsModal">
         Check Your Pockets
     </button>
-
     <!-- Modal -->
     <div class="modal fade" id="checkYourkPocketsModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -101,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 
 
-    <form method="post" action="chapterOne/MovingAfterWakingUp.php">
+    <form method="post" action="MovingAfterWakingUp.php">
         <h4>Move: </h4>
         <button class="hacking_green_bg border-0" type="submit" name="destination" value="North">Go North</button>
         <button class="hacking_green_bg border-0" type="submit" name="destination" value="South">Go South</button>
@@ -113,4 +112,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <!-- end location -->
 </div>
-<?php include_once 'partials/footer.php' ?>
+<?php include_once '../partials/footer.php' ?>

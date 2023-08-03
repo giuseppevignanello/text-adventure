@@ -1,9 +1,10 @@
-<?php include_once 'partials/header.php' ?>
-<header class="p-2">
-    <h2>Text adventure</h2>
-    <small>made by Giuseppe Vignanello</small>
-</header>
+<?php include_once '../partials/header.php' ?>
 <div class="container mt-4">
+    <header>
+        <h2>Text adventure</h2>
+        <small>made by Giuseppe Vignanello</small>
+    </header>
+
     <form method="post" action="firstSetting.php">
         <div class="d-flex flex-column">
             <label for="hero_name">Insert your hero name</label>
@@ -13,4 +14,4 @@
     </form>
 </div>
 
-<?php include_once 'partials/footer.php' ?>
+<?php include_once '../partials/footer.php' ?>
