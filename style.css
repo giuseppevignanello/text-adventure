@@ -1,3 +1,6 @@
+/* region general */
+
+/* general colors */
 .hacking_green {
     color: #20C20E;
 }
@@ -5,3 +8,29 @@
 .hacking_green_bg {
     background-color: #20C20E;
 }
+
+/* blinking animation for input*/
+
+.blinking-placeholder {
+    animation: blink 1s step-end infinite;
+}
+
+.blinking-placeholder::placeholder {
+    color: #20C20E;
+    font-weight: bold;
+    font-style: 20px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* #end region general */

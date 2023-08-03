@@ -42,46 +42,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php include_once 'partials/header.php' ?>
+<div class="container mt-4">
+    <h5>Hi <?php echo $hero_name ?></h5>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>Starting Adventure</title>
-</head>
+    <!-- hero stats -->
+    <h6>These are your stats:</h6>
+    <p> Life Points: <?php echo $hero->getCharacterData("lifePoints") ?> <br>
+        Attack: <?php echo $hero->getCharacterData("attack") ?> <br>
+        Defense: <?php echo $hero->getCharacterData("defense") ?>
+    </p>
 
-<body class="hacking_green bg-black ">
-    <div class="container mt-4">
-        <h5>Hi <?php echo $hero_name ?></h5>
+    <!-- end hero stats -->
 
-        <!-- hero stats -->
-        <h6>These are your stats:</h6>
-        <p> Life Points: <?php echo $hero->getCharacterData("lifePoints") ?> <br>
-            Attack: <?php echo $hero->getCharacterData("attack") ?> <br>
-            Defense: <?php echo $hero->getCharacterData("defense") ?>
-        </p>
+    <!-- location -->
+    <h4><?php echo $beach->getName()  ?>, Morning</h4>
+    <p> You wake up on <?php echo $beach->getDescription() ?> You don't know how you ended up here. </p>
+    <form method="post" action="process_choice.php">
+        <h4>Move: </h4>
+        <button class="hacking_green_bg border-0" type="submit" name="destination" value="North">Go North</button>
+        <button class="hacking_green_bg border-0" type="submit" name="destination" value="South">Go South</button>
+        <button class="hacking_green_bg border-0" type="submit" name="destination" value="East">Go East</button>
+        <button class="hacking_green_bg border-0" type="submit" name="destination" value="West">Go West</button>
 
-        <!-- end hero stats -->
-
-        <!-- location -->
-        <h4><?php echo $beach->getName()  ?>, Morning</h4>
-        <p> You wake up on <?php echo $beach->getDescription() ?> You don't know how you ended up here. </p>
-        <form method="post" action="process_choice.php">
-            <h4>Move: </h4>
-            <button class="hacking_green_bg border-0" type="submit" name="destination" value="North">Go North</button>
-            <button class="hacking_green_bg border-0" type="submit" name="destination" value="South">Go South</button>
-            <button class="hacking_green_bg border-0" type="submit" name="destination" value="East">Go East</button>
-            <button class="hacking_green_bg border-0" type="submit" name="destination" value="West">Go West</button>
-
-        </form>
+    </form>
 
 
-        <!-- end location -->
-    </div>
-</body>
-
-</html>
+    <!-- end location -->
+</div>
+<?php include_once 'partials/footer.php' ?>
