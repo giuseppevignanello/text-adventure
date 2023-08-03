@@ -12,8 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $hero = new  Playable($hero_name, 100, 20, 10);
     $hero->addToInventory("A dead cellphone", "An Empty Wallet", "A set of Keys");
     $hero_inventory = $hero->getInventory();
-    // save the hero in the session
+    // save the hero_data in the session
     $_SESSION["hero"] = $hero;
+    $_SESSION["hero_name"] = $hero_name;
 
     // create starting location
 
@@ -45,59 +46,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <?php include_once '../partials/header.php' ?>
 <div class="container mt-4">
+    <?php include_once "../partials/stats.php" ?>
+
     <h5>Hi <?php echo $hero_name ?></h5>
-
-    <!-- hero stats -->
-    <div class="accordion py-2" id="accordionStats">
-        <div class="accordion-item">
-            <h6 id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Your stats:
-                </button>
-            </h6>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionStats">
-                <div class="accordion-body">
-                    <p> Life Points: <?php echo $hero->getCharacterData("lifePoints") ?> <br>
-                        Attack: <?php echo $hero->getCharacterData("attack") ?> <br>
-                        Defense: <?php echo $hero->getCharacterData("defense") ?>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- end hero stats -->
-
     <!-- location -->
     <h4><?php echo $beach->getName()  ?>, Morning</h4>
     <p> You wake up on <?php echo $beach->getDescription() ?> You don't know how you ended up here. </p>
 
-    <!-- Button trigger modal -->
-    <button type="button" class="my-2 hacking_green_bg border-0" data-bs-toggle="modal" data-bs-target="#checkYourkPocketsModal">
-        Check Your Pockets
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="checkYourkPocketsModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content bg-black">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitleId">The contents of your pockets</h5>
-                    <button type="button" class="btn-close hacking_green_bg" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <ul>
-                            <?php
-                            foreach ($hero_inventory as $item) {
-                                echo "<li> {$item} </li>";
-                            }
-                            ?>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 
     <form method="post" action="MovingAfterWakingUp.php">

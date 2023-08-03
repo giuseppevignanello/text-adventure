@@ -1,5 +1,14 @@
+<?php
+require_once "../../Classes/Playable.php";
+session_start();
+$hero = $_SESSION['hero'];
+$hero_inventory = $hero->getInventory();
+?>
+
+
 <?php include_once '../../partials/header.php' ?>
 <div class="container">
+    <?php include_once '../../partials/stats.php' ?>
     <h2>Fisherman</h2>
     <form method="post" action="../firstSetting.php">
         <h4>Move: </h4>
