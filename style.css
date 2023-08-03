@@ -33,4 +33,23 @@ input::placeholder {
     }
 }
 
+/* accordion style */
+
+.accordion-item {
+    background-color: black;
+}
+
+.accordion, .accodion-item, .accordion-button, .accordion-body {
+    background-color: black;
+    color: #20C20E;
+    border: 0;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #20C20E;
+    background-color: black;
+}
+
+/* end acoordion style */
+
 /* #end region general */

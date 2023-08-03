@@ -47,11 +47,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <h5>Hi <?php echo $hero_name ?></h5>
 
     <!-- hero stats -->
-    <h6>These are your stats:</h6>
-    <p> Life Points: <?php echo $hero->getCharacterData("lifePoints") ?> <br>
-        Attack: <?php echo $hero->getCharacterData("attack") ?> <br>
-        Defense: <?php echo $hero->getCharacterData("defense") ?>
-    </p>
+    <div class="accordion py-2" id="accordionStats">
+        <div class="accordion-item">
+            <h6 id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Your stats:
+                </button>
+            </h6>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionStats">
+                <div class="accordion-body">
+                    <p> Life Points: <?php echo $hero->getCharacterData("lifePoints") ?> <br>
+                        Attack: <?php echo $hero->getCharacterData("attack") ?> <br>
+                        Defense: <?php echo $hero->getCharacterData("defense") ?>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- end hero stats -->
 
