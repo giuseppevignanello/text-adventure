@@ -29,8 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $beach->addObject("Seashells");
 
     //adding NPC 
-    $beach->addNPCCharacter("Beach Vendor");
-    $beach->addNPCCharacter("Lifeguard");
+    $beach->addNPCCharacter("Fisherman");
+    $beach->addNPCCharacter("Stray Dog");
 
     //adding possible destinations
     $beach->addPossibleDestination("Forest");
