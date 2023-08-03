@@ -1,4 +1,6 @@
 <?php
+require_once "Location.php";
+
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -11,6 +13,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // save the hero in the session
     $_SESSION["hero"] = $hero;
+
+    // create starting location
+
+    $beach = new Location("Beach", "a sandy beach with crystal-clear waters and gentle waves.");
+
+    // Access common actions [talk, walk] for the beach
+    $commonActions = $beach->getAvailableActions();
+
+    //adding ojbects on starting location 
+
+    $beach->addObject("Palm trees");
+    $beach->addObject("Beach umbrellas");
+    $beach->addObject("Seashells");
+
+    //adding NPC 
+    $beach->addNPCCharacter("Beach Vendor");
+    $beach->addNPCCharacter("Lifeguard");
+
+    //adding possible destinations
+    $beach->addPossibleDestination("Forest");
+    $beach->addPossibleDestination("Ocean");
+
+    //adding obstacles 
+    $beach->addObstacle('A large log');
+    $beach->addObstacle('A small stream');
+    $beach->addObstacle('A group of noisy tourists');
 }
 ?>
 
@@ -21,18 +49,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>First Fight</title>
+    <title>Starting Adventure</title>
 </head>
 
 <body class="bg-success text-white">
     <div class="container mt-4">
         <form method="post" action="firstFight.php">
             <h5>Hi <?php echo $hero_name ?></h5>
+
+            <!-- hero stats -->
             <h6>These are your points:</h6>
             <p> Life Points: <?php echo $hero->getCharacterData("lifePoints") ?> <br>
                 Attack: <?php echo $hero->getCharacterData("attack") ?> <br>
                 Defense: <?php echo $hero->getCharacterData("defense") ?>
             </p>
+
+            <!-- end hero stats -->
+
+            <!-- location -->
+            <h4><?php echo $beach->getName()  ?>, Morning</h4>
+            <p> You wake up on <?php echo $beach->getDescription() ?> You don't know how you ended up here. </p>
+
+            <!-- end location -->
             <h4>Enjoy your first fight</h4>
             <button class="btn btn-primary" type="submit">Fight</button>
         </form>

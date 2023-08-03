@@ -1,6 +1,6 @@
 <?php
 
-class Locaction
+class Location
 {
 
     // attributes
@@ -20,7 +20,7 @@ class Locaction
         $this->description = $description;
         $this->objectsPresent = array();
         $this->npcCharacters = array();
-        $this->availableActions = array();
+        $this->availableActions = array("Walk", "Talk");
         $this->obstacles = array();
         $this->possibleDestinations = array();
         $this->choiceResults = array();
