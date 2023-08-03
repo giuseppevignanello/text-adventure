@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $_SESSION["hero"] = $hero;
     $_SESSION["hero_name"] = $hero_name;
 
-    // create starting location
+    // create beach location
 
     $beach = new Location("Beach", "a sandy beach with crystal-clear waters and gentle waves.");
 
@@ -47,8 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <?php include_once '../partials/header.php' ?>
 <div class="container mt-4">
     <?php include_once "../partials/stats.php" ?>
-
-    <h5>Hi <?php echo $hero_name ?></h5>
+    <div id="beach_image">
+    </div>
     <!-- location -->
     <h4><?php echo $beach->getName()  ?>, Morning</h4>
     <p> You wake up on <?php echo $beach->getDescription() ?> You don't know how you ended up here. </p>

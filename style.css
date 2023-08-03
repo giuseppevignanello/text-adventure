@@ -53,3 +53,17 @@ input::placeholder {
 /* end acoordion style */
 
 /* #end region general */
+
+#beach_image {
+    width: 100%;
+    height: 200px;
+    background-image: url('./img/beach.png');
+}
+
+/* region forest */
+#forest_image {
+    width: 100%;
+    height: 200px;
+    background-image: url('./img/forest.png');
+}
+/* end region forest */
