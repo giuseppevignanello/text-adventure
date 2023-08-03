@@ -15,7 +15,7 @@
     animation: blink 1s step-end infinite;
 }
 
-.blinking-placeholder::placeholder {
+input::placeholder {
     color: #20C20E;
     font-weight: bold;
     font-style: 20px;
