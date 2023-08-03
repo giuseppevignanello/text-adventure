@@ -13,3 +13,18 @@ inputsAnimation.forEach((input) => {
 });
 
 // end handle blinking animation
+
+// bootstrap modal script
+
+var modalId = document.getElementById("modalId");
+
+modalId.addEventListener("show.bs.modal", function (event) {
+  // Button that triggered the modal
+  let button = event.relatedTarget;
+  // Extract info from data-bs-* attributes
+  let recipient = button.getAttribute("data-bs-whatever");
+
+  // Use above variables to manipulate the DOM
+});
+
+// end bootstrap modal script
