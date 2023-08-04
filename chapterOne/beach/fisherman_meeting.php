@@ -12,7 +12,7 @@ $fisherman = new NPC("Fisherman", 80, 15, 8);
 // fisherman dialogues
 $fisherman->addDialogue("Don't you know how to tell time? It's morning, and you washed up on this shore not too
 long ago. Look, I'm busy here, so figure things out yourself.");
-$fisherman->addDialogue("Greetings, traveler. The ocean is calm today.");
+$fisherman->addDialogue("I don't have time for this! You washed up on the shore like a piece of driftwood, and now you expect me to be your personal memory bank? Figure it out yourself! And stop bothering me with your questions!");
 
 // fisherman objects
 $fisherman->addToTradeInventory("Freshly caught fish");
