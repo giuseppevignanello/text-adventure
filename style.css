@@ -76,3 +76,19 @@ input::placeholder {
     background-image: url('./img/ocean.png');
 }
 /* end region ocean */
+
+/* region fisherman*/
+#fisherman_image {
+    width: 100%;
+    height: 200px;
+    background-image: url('./img/fisherman.png');
+}
+/* end region ocean */
+
+/* region dog*/
+#dog_image {
+    width: 100%;
+    height: 200px;
+    background-image: url('./img/dog.png');
+}
+/* end region dog */
