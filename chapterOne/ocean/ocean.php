@@ -4,7 +4,9 @@ require_once "../../Classes/Playable.php";
 require '../../Classes/Location.php';
 session_start();
 $hero = $_SESSION['hero'];
-$hero_inventory = $hero->getInventory();
+
+// to empty the hero pockets
+$noClothes = true;
 
 // create ocean location
 $ocean = new Location("Ocean", "A tranquil ocean, with gentle waves, a serene atmosphere, and the occasional cry of seagulls.")

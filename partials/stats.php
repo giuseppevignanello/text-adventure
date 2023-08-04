@@ -8,7 +8,8 @@
  </div>
  <div class="d-flex justify-content-end">
      <!-- Button trigger modal -->
-     <button type="button" class="my-2 hacking_green_bg border-0" data-bs-toggle="modal" data-bs-target="#checkYourkPocketsModal">
+     <button type="button" class="my-2 hacking_green_bg border-0" data-bs-toggle="modal"
+         data-bs-target="#checkYourkPocketsModal">
          Check Your Pockets
      </button>
      <!-- Modal -->
@@ -17,15 +18,20 @@
              <div class="modal-content bg-black">
                  <div class="modal-header">
                      <h5 class="modal-title" id="modalTitleId">The contents of your pockets</h5>
-                     <button type="button" class="btn-close hacking_green_bg" data-bs-dismiss="modal" aria-label="Close"></button>
+                     <button type="button" class="btn-close hacking_green_bg" data-bs-dismiss="modal"
+                         aria-label="Close"></button>
                  </div>
                  <div class="modal-body">
                      <div class="container-fluid">
                          <ul>
                              <?php
+                             if($noClothes) {
+                                echo "<li> You have no pockets, your clothes are on the beach </li>";
+                             } else {
                                 foreach ($hero_inventory as $item) {
                                     echo "<li> {$item} </li>";
                                 }
+                             }
                                 ?>
                          </ul>
                      </div>
