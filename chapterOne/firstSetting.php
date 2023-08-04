@@ -57,7 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     <form method="post" action="MovingAfterWakingUp.php">
-        <h4>Move: </h4>
         <button class="hacking_green_bg border-0" type="submit" name="destination" value="North">Go North</button>
         <button class="hacking_green_bg border-0" type="submit" name="destination" value="South">Go South</button>
         <button class="hacking_green_bg border-0" type="submit" name="destination" value="East">Go East</button>

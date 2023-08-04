@@ -67,3 +67,12 @@ input::placeholder {
     background-image: url('./img/forest.png');
 }
 /* end region forest */
+
+
+/* region ocean */
+#ocean_image {
+    width: 100%;
+    height: 200px;
+    background-image: url('./img/ocean.png');
+}
+/* end region ocean */
