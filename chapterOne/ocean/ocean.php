@@ -22,7 +22,7 @@ $ocean = new Location("Ocean", "A tranquil ocean, with gentle waves, a serene at
     <p> <?php echo $ocean->getDescription() ?> </p>
     <div class="d-flex gap-2 mt-4">
         <div>
-            <form method="post" action="../firstSetting.php">
+            <form method="post" action="../beach/beachStart.php">
                 <button class="hacking_green_bg border-0" type="submit">Back to shore </button>
             </form>
         </div>

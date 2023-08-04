@@ -18,7 +18,7 @@ $hero_inventory = $hero->getInventory();
     <h4>Move: </h4>
     <div class="d-flex gap-2">
         <div>
-            <form method="post" action="../firstSetting.php">
+            <form method="post" action="../beach/beachStart.php">
                 <button class="hacking_green_bg border-0" type="submit">Come back</button>
             </form>
         </div>

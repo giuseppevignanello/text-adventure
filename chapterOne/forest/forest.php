@@ -22,7 +22,7 @@ $forest = new Location('Forest', 'A serene forest, filled with towering trees an
     <p> <?php echo $forest->getDescription() ?> </p>
     <div class="d-flex gap-2 mt-4">
         <div>
-            <form method="post" action="../firstSetting.php">
+            <form method="post" action="../beach/beachStart.php">
                 <button class="hacking_green_bg border-0" type="submit">Get out of the forest </button>
             </form>
         </div>

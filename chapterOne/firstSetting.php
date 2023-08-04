@@ -41,6 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $beach->addObstacle('A large log');
     $beach->addObstacle('A small stream');
     $beach->addObstacle('A group of noisy tourists');
+
+    $_SESSION['beach'] = $beach;
 }
 ?>
 
