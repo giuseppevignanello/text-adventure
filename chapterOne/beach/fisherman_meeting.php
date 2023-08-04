@@ -1,8 +1,25 @@
 <?php
-require_once "../../Classes/Playable.php";
+require "../../Classes/Playable.php";
+require "../../Classes/NPC.php";
 session_start();
 $hero = $_SESSION['hero'];
 $hero_inventory = $hero->getInventory();
+
+
+// create the fisherman
+$fisherman = new NPC("Fisherman", 80, 15, 8);
+
+// fisherman dialogues
+$fisherman->addDialogue("Don't you know how to tell time? It's morning, and you washed up on this shore not too
+long ago. Look, I'm busy here, so figure things out yourself.");
+$fisherman->addDialogue("Greetings, traveler. The ocean is calm today.");
+
+// fisherman objects
+$fisherman->addToTradeInventory("Freshly caught fish");
+$fisherman->addToTradeInventory("Fishing net");
+
+
+$_SESSION['fisherman'] = $fisherman;
 ?>
 
 
@@ -27,7 +44,7 @@ $hero_inventory = $hero->getInventory();
         </div>
         <div>
             <form action="fisherman_dialogue.php" method="post">
-                <button class="hacking_green_bg border-0" type="submit">Talk with him</button>
+                <button id="talk_fisherman" class="hacking_green_bg border-0" type="submit">Talk with him</button>
             </form>
         </div>
     </div>
