@@ -49,8 +49,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <?php include_once '../partials/header.php' ?>
 <div class="container mt-4">
     <?php include_once "../partials/stats.php" ?>
-    <div id="beach_image">
-    </div>
+</div>
+<div id="beach_image">
+</div>
+<div class="container">
     <!-- location -->
     <h4><?php echo $beach->getName()  ?>, Morning</h4>
     <p> You wake up on <?php echo $beach->getDescription() ?> You don't know how you ended up here. </p>

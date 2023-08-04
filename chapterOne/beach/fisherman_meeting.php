@@ -13,6 +13,8 @@ $fisherman = new NPC("Fisherman", 80, 15, 8);
 $fisherman->addDialogue("Don't you know how to tell time? It's morning, and you washed up on this shore not too
 long ago. Look, I'm busy here, so figure things out yourself.");
 $fisherman->addDialogue("I don't have time for this! You washed up on the shore like a piece of driftwood, and now you expect me to be your personal memory bank? Figure it out yourself! And stop bothering me with your questions!");
+$fisherman->addDialogue("Yes, like a piece of driftwood! It means you were washed ashore by the waves, just like a lifeless, useless piece of wood. Now stop bothering me with your questions!");
+$fisherman->addDialogue("You've got some nerve, don't ya? I've had enough of your attitude! If you want a fight, you've got it!");
 
 // fisherman objects
 $fisherman->addToTradeInventory("Freshly caught fish");
