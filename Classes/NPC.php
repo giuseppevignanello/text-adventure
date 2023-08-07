@@ -27,6 +27,11 @@ class NPC extends Character
         return $this->dialogues;
     }
 
+    public function clearDialogues()
+    {
+        $this->dialogues = array();
+    }
+
     // Trade Inventory
     public function addToTradeInventory($item)
     {

@@ -23,14 +23,17 @@ $fisherman = $_SESSION['fisherman'];
 </div>
 <div class="container">
     <div id="dialogueContainer">
-        <p id="hero_line">You: "I'm sorry... Can you tell me what happened? I don't
-            remember"
-            anything. What time is it</p>
+        <p id="hero_line">You: I'm sorry... Can you tell me what happened? I don't
+            remember anything. What time is it";
+        </p>
         <p id="fisherman_response">Fisherman (gruffly): <?php echo $fisherman->getDialogues()[0] ?> </p>
     </div>
     <div class="d-flex gap-2">
-        <div id="leave_alone">
+        <div>
             <form method="post" action="../beach/beachStart.php">
+                <div id="leave_alone">
+
+                </div>
                 <button class="hacking_green_bg border-0" type="submit">Leave him alone</button>
             </form>
         </div>
@@ -51,12 +54,12 @@ $fisherman = $_SESSION['fisherman'];
     </div>
 </div>
 
-
 <script>
     // fisherman dialogue
 
-    let heroLine = document.getElementById("hero_line");
-    let fishermanResponse = document.getElementById("fisherman_response");
+    const heroLine = document.getElementById("hero_line");
+    const fishermanResponse = document.getElementById("fisherman_response");
+    const leaveAlone = document.getElementById('leave_alone');
 
     // first
     const insist = document.getElementById("insist");
@@ -87,15 +90,14 @@ $fisherman = $_SESSION['fisherman'];
         //add dialogue lines
         heroLine.innerText = "You: Like a piece of driftwood?"
         fishermanResponse.innerText = 'Fisherman: <?php echo $fisherman->getDialogues()[2] ?>'
-
         //hide buttons
         explanations.classList.add('d-none');
         angry.classList.add('d-none');
+        leaveAlone.innerHTML += ` <input type="hidden" name="fisherman" value="explanations">`
     })
 
     // angry logic
     const angry = document.getElementById('angry');
-    const leaveAlone = document.getElementById('leave_alone');
     const fight = document.getElementById('fight')
 
     angry.addEventListener('click', function() {
@@ -103,7 +105,8 @@ $fisherman = $_SESSION['fisherman'];
         //add dialogue lines
         heroLine.innerText =
             "You (angry) Hey, there's no need to be so rude! I don't remember anything, and I'm just trying to figure out what happened. A little kindness wouldn't hurt, you know!";
-        fishermanResponse.innerText = "Fisherman(angrily): <?php echo $fisherman->getDialogues()[3] ?> ";
+        fishermanResponse.innerText =
+            "Fisherman(angrily): <?php echo $fisherman->getDialogues()[3] ?> ";
 
         // hide buttons
         explanations.classList.add('d-none');
