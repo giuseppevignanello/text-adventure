@@ -13,6 +13,11 @@ $beach = $_SESSION['beach'];
 
 $fisherman = $_SESSION['fisherman'];
 
+// hide html condition
+if ($fisherman->getDialogues()[0] != "Are you here again?") {
+    $hide = true;
+}
+
 ?>
 
 <?php include_once '../../partials/header.php' ?>
@@ -23,8 +28,8 @@ $fisherman = $_SESSION['fisherman'];
 </div>
 <div class="container">
     <div id="dialogueContainer">
-        <p id="hero_line">You: I'm sorry... Can you tell me what happened? I don't
-            remember anything. What time is it";
+        <p id="hero_line"><?php echo $hide ? "You: I'm sorry... Can you tell me what happened? I don't
+            remember anything. What time is it" : "You: Sorry..."  ?>
         </p>
         <p id="fisherman_response">Fisherman (gruffly): <?php echo $fisherman->getDialogues()[0] ?> </p>
     </div>
@@ -40,11 +45,15 @@ $fisherman = $_SESSION['fisherman'];
         <div id="fisherman_dialogue_buttons" class="d-flex gap-1">
 
             <!-- insist button -->
-            <button id="insist" class="hacking_green_bg border-0" type="Type">Insist</button>
-            <!-- explanations button -->
-            <button id="explanations" class="hacking_green_bg border-0 d-none" type="Type">Ask for explanations</button>
-            <!-- //angry button -->
-            <button id="angry" class="hacking_green_bg border-0 d-none" type="Type">Get Angry</button>
+            <div class="<?php echo $hide ? '' : 'd-none' ?>">
+                <button id="insist" class="hacking_green_bg border-0" type="Type">Insist</button>
+                <!-- explanations button -->
+                <button id="explanations" class="hacking_green_bg border-0 d-none" type="Type">Ask for
+                    explanations</button>
+                <!-- //angry button -->
+            </div>
+            <button id="angry" class="hacking_green_bg border-0 <?php echo $hide ? 'd-none' : '' ?>" type="Type">Get
+                Angry</button>
 
             <!-- fight button -->
             <form id="fight" method="post" action="fisherman_fight.php" class="d-none">
