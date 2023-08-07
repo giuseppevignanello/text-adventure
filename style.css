@@ -91,4 +91,10 @@ input::placeholder {
     height: 200px;
     background-image: url('./img/dog.png');
 }
+
+#angry_dog_image {
+    width: 100%;
+    height: 200px;
+    background-image: url('./img/angry_dog.png');
+}
 /* end region dog */
