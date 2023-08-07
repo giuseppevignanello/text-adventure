@@ -15,6 +15,9 @@ if (isset($_POST['fisherman']) && $_POST['fisherman'] === "explanations") {
     $fisherman = $_SESSION['fisherman'];
     $fisherman->clearDialogues();
     $fisherman->addDialogue('Are you here again?');
+    $fisherman->addDialogue('');
+    $fisherman->addDialogue('');
+    $fisherman->addDialogue("You've got some nerve, don't ya? I've had enough of your attitude! If you want a fight, you've got it!");
     $_SESSION['fisherman'] = $fisherman;
 }
 

@@ -28,8 +28,9 @@ if ($fisherman->getDialogues()[0] != "Are you here again?") {
 </div>
 <div class="container">
     <div id="dialogueContainer">
+        <!-- check if is the first converstion -->
         <p id="hero_line"><?php echo $hide ? "You: I'm sorry... Can you tell me what happened? I don't
-            remember anything. What time is it" : "You: Sorry..."  ?>
+            remember anything. What time is it" : "You: Hi, sorry..."  ?>
         </p>
         <p id="fisherman_response">Fisherman (gruffly): <?php echo $fisherman->getDialogues()[0] ?> </p>
     </div>
@@ -102,6 +103,8 @@ if ($fisherman->getDialogues()[0] != "Are you here again?") {
         //hide buttons
         explanations.classList.add('d-none');
         angry.classList.add('d-none');
+
+        // add hidden input to store conversation
         leaveAlone.innerHTML += ` <input type="hidden" name="fisherman" value="explanations">`
     })
 
