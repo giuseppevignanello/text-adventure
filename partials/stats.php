@@ -25,13 +25,13 @@
                      <div class="container-fluid">
                          <ul>
                              <?php
-                             if($noClothes) {
-                                echo "<li> You have no pockets, your clothes are on the beach </li>";
-                             } else {
-                                foreach ($hero_inventory as $item) {
-                                    echo "<li> {$item} </li>";
+                                if ($noClothes) {
+                                    echo "<li> You have no pockets, your clothes are on the beach </li>";
+                                } else {
+                                    foreach ($hero_inventory as $i => $item) {
+                                        echo "<li class='d-flex' > <div id='item{$i}'>{$item} </div> </li>";
+                                    }
                                 }
-                             }
                                 ?>
                          </ul>
                      </div>

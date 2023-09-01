@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // create hero character
     require_once "../Classes/Playable.php";
     $hero = new  Playable($hero_name, 100, 20, 10);
-    $hero->addToInventory("A dead cellphone", "An Empty Wallet", "A set of Keys");
+    $hero->addToInventory("A dead cellphone", "An Empty Wallet", "A set of Keys", "A half-eaten sandwich ");
     $hero_inventory = $hero->getInventory();
     // save the hero_data in the session
     $_SESSION["hero"] = $hero;
