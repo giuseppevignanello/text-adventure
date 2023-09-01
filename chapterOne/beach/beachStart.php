@@ -11,6 +11,8 @@ $hero_inventory = $hero->getInventory();
 
 $beach = $_SESSION['beach'];
 
+// if you have already asked the fisherman
+
 if (isset($_POST['fisherman']) && $_POST['fisherman'] === "explanations") {
     $fisherman = $_SESSION['fisherman'];
     $fisherman->clearDialogues();
@@ -19,7 +21,15 @@ if (isset($_POST['fisherman']) && $_POST['fisherman'] === "explanations") {
     $fisherman->addDialogue('');
     $fisherman->addDialogue("You've got some nerve, don't ya? I've had enough of your attitude! If you want a fight, you've got it!");
     $_SESSION['fisherman'] = $fisherman;
+};
+
+//if you’ve already met the dog
+if (isset($_POST['dog']) && $_POST['dog'] === "sandwichEaten") {
+    $hero->removeFromInventory("A half-eaten sandwich");
+    $_SESSION['hero'] = $hero;
 }
+
+
 
 
 ?>
@@ -54,5 +64,9 @@ if (isset($_POST['fisherman']) && $_POST['fisherman'] === "explanations") {
         </div>
     </div>
 </div>
+<script>
+//hide the sandwich
+document.getElementById('item3').classList.add('d-none')
+</script>
 
 <?php include_once '../../partials/footer.php' ?>

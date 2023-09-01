@@ -29,4 +29,16 @@ class Playable extends Character
     {
         return $this->inventory;
     }
+
+    //remove an object
+    public function removeFromInventory($itemToRemove)
+    {
+        // Search the objects in the inventory
+        $key = array_search($itemToRemove, $this->inventory);
+
+        // Remove the object
+        if ($key !== false) {
+            unset($this->inventory[$key]);
+        }
+    }
 }
