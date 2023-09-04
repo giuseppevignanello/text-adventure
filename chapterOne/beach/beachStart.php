@@ -37,6 +37,8 @@ if (isset($_POST['fisherman_fight']) && $_POST['fisherman_fight'] === "win") {
     $fisherman = $_SESSION['fisherman'];
     $fisherman->clearDialogues();
     $fisherman->addDialogue('You again... please don`t hurt me ');
+    $fisherman->addDialogue('Well, this here\'s Serenity Cove, a quiet spot tucked away from the rest of the world. Not much happens here, just a place for folks like me to fish and enjoy some peace and quiet. You won\'t find many folks around here, that\'s for sure. ');
+    $fisherman->addDialogue('Well, lad, there are two ways out of this place. The forest to the north is your path if you want to head back inland. It\'s a bit of a hike, but the shade from those trees can be mighty welcoming. Alternatively, you can head south towards the ocean. But it\'s hard without a boat \n Mind you, each route has its own challenges, so be prepared. The forest can get pretty dense, and who knows what critters lurk in there. The sea, on the other hand, can be unpredictable. So, where will your journey take you?');
     $_SESSION['fisherman'] = $fisherman;
     $fisherman_win = true;
 };
@@ -63,9 +65,7 @@ if (isset($_POST['fisherman_fight']) && $_POST['fisherman_fight'] === "win") {
                 <button class="hacking_green_bg border-0" type="submit" name="destination" value="South">Go
                     South</button>
             </form>
-            <form
-                <?php echo $fisherman_win ? "action = './fisherman_win.php'" : "action = './fisherman_dialogue.php'" ?>
-                method="post">
+            <form <?php echo $fisherman_win ? "action = './fisherman_win.php'" : "action = './fisherman_dialogue.php'" ?> method="post">
                 <button class="hacking_green_bg border-0" type="submit" name="destination" value="East">Go
                     East</button>
             </form>
@@ -77,8 +77,8 @@ if (isset($_POST['fisherman_fight']) && $_POST['fisherman_fight'] === "win") {
     </div>
 </div>
 <script>
-//hide the sandwich
-document.getElementById('item3').classList.add('d-none')
+    //hide the sandwich
+    document.getElementById('item3').classList.add('d-none')
 </script>
 
 <?php include_once '../../partials/footer.php' ?>
