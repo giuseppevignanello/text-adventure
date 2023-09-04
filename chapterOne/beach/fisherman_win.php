@@ -19,10 +19,12 @@ $fisherman = $_SESSION['fisherman'];
 <div class="container">
     <?php include_once '../../partials/stats.php' ?>
 </div>
-<div id="fisherman_lose_image">
+<div id="fisherman_win_image">
 </div>
 <div class="container mt-2">
     <div id="text_area">
+        <p> You: Hi</p>
+        <p> Fisherman: You again... Please don't hurt</p>
     </div>
 
     <div id="buttons" class="d-flex gap-2">

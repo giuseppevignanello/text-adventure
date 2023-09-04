@@ -11,6 +11,8 @@ $hero_inventory = $hero->getInventory();
 
 $beach = $_SESSION['beach'];
 
+$fisherman_win = false;
+
 // if you have already asked the fisherman
 
 if (isset($_POST['fisherman']) && $_POST['fisherman'] === "explanations") {
@@ -29,7 +31,15 @@ if (isset($_POST['dog']) && $_POST['dog'] === "sandwichEaten") {
     $_SESSION['hero'] = $hero;
 }
 
+//if you won the fight with the fisherman 
 
+if (isset($_POST['fisherman_fight']) && $_POST['fisherman_fight'] === "win") {
+    $fisherman = $_SESSION['fisherman'];
+    $fisherman->clearDialogues();
+    $fisherman->addDialogue('You again... please don`t hurt me ');
+    $_SESSION['fisherman'] = $fisherman;
+    $fisherman_win = true;
+};
 
 
 ?>
@@ -53,7 +63,9 @@ if (isset($_POST['dog']) && $_POST['dog'] === "sandwichEaten") {
                 <button class="hacking_green_bg border-0" type="submit" name="destination" value="South">Go
                     South</button>
             </form>
-            <form action="./fisherman_dialogue.php" method="post">
+            <form
+                <?php echo $fisherman_win ? "action = './fisherman_win.php'" : "action = './fisherman_dialogue.php'" ?>
+                method="post">
                 <button class="hacking_green_bg border-0" type="submit" name="destination" value="East">Go
                     East</button>
             </form>

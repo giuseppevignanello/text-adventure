@@ -90,10 +90,15 @@ input::placeholder {
     background-image: url('./img/fisherman_fight.png');
 }
 
-#fisherman_lose {
+#fisherman_lose_image {
     width: 100%;
     height: 200px;
     background-image: url('./img/fisherman_lose.png');
+}
+#fisherman_win_image {
+    width: 100%;
+    height: 200px;
+    background-image: url('./img/fisherman_win.png');
 }
 /* end region ocean */
 
